@@ -1,0 +1,139 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:rxui="using:Avalonia.ReactiveUI"
+        xmlns:app="using:Amir"
+        xmlns:vm="using:Amir.ViewModels"
+        xmlns:material="clr-namespace:MaterialDesign.Avalonia.PackIcon;assembly=MaterialDesign.Avalonia.PackIcon"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Amir.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        Title="Тренажер для изучения и понимания алгоритмов">
+
+  <Panel>
+
+    <ExperimentalAcrylicBorder IsHitTestVisible="False">
+      <ExperimentalAcrylicBorder.Material>
+        <ExperimentalAcrylicMaterial
+             BackgroundSource="Digger"
+             TintColor="Black"
+             TintOpacity="1"
+             MaterialOpacity="0.65" />
+      </ExperimentalAcrylicBorder.Material>
+    </ExperimentalAcrylicBorder>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+      <StackPanel>
+
+        <Carousel Height="400"
+                  Classes="slideHorizontal" x:Name="carousel">
+          <Carousel.Styles>
+            <Style Selector="TextBlock">
+              <Setter Property="FontSize" Value="18"/>
+              <Setter Property="FontWeight" Value="Bold"/>
+              <Setter Property="Foreground" Value="White"/>
+              <Setter Property="HorizontalAlignment" Value="Center"/>
+              <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+          </Carousel.Styles>
+
+          <Border Background="#364d79">
+            <Grid RowDefinitions="*,96" Margin="28">
+
+              <StackPanel HorizontalAlignment="Left" Grid.Row="0">
+                <TextBlock Text="Блочная сортировка"  Margin="0,18" HorizontalAlignment="Left" Classes="h1"/>
+                <TextBlock Classes="h3" Margin="0,14" HorizontalAlignment="Left" TextWrapping="Wrap">
+                  Блочная сортировка разделяет данные на блоки, сортирует каждый
+                  блок отдельно и затем объединяет их в отсортированный массив.
+                </TextBlock>
+
+                <Button Theme="{StaticResource PrimaryButtonStyle}" Command="{Binding GoTo}" CommandParameter="BucketSort" HorizontalAlignment="Left">Подробнее</Button>
+
+              </StackPanel>
+
+              <material:PackIcon Kind="ChartBarStacked"
+                                 Foreground="White"
+                                 Width="96"
+                                 Height="96"
+                                 HorizontalAlignment="Right"
+                                 VerticalAlignment="Bottom"
+                                 Grid.Row="1"/>
+            </Grid>
+
+
+          </Border>
+          <Border Background="#784036">
+            <Grid RowDefinitions="*,96" Margin="28">
+
+              <StackPanel HorizontalAlignment="Left" Grid.Row="0">
+                <TextBlock Text="Сортировка методом сравнения и обмена с транспозицией" TextWrapping="Wrap" Margin="0,18" HorizontalAlignment="Left" Classes="h1"/>
+                <TextBlock Classes="h3" Margin="0,14" HorizontalAlignment="Left" TextWrapping="Wrap">
+                  Сортировка методом сравнения и обмена с транспозицией оптимизирует
+                  производительность сортировки через минимизацию
+                  операций сравнения и обмена с использованием транспозиции элементов.
+                </TextBlock>
+
+                <Button Theme="{StaticResource PrimaryButtonStyle}" Command="{Binding GoTo}" CommandParameter="TranspositionSort" HorizontalAlignment="Left">Подробнее</Button>
+
+              </StackPanel>
+
+              <material:PackIcon Kind="SwapHorizontal"
+                                 Foreground="White"
+                                 Width="96"
+                                 Height="96"
+                                 HorizontalAlignment="Right"
+                                 VerticalAlignment="Bottom"
+                                 Grid.Row="1"/>
+            </Grid>
+          </Border>
+          <Border Background="#647836">
+            <Grid RowDefinitions="*,96" Margin="28">
+
+              <StackPanel HorizontalAlignment="Left" Grid.Row="0">
+                <TextBlock Text="Сортировка низкой плотности" TextWrapping="Wrap" Margin="0,18" HorizontalAlignment="Left" Classes="h1"/>
+                <TextBlock Classes="h3" Margin="0,14" HorizontalAlignment="Left" TextWrapping="Wrap">
+                  Сортировка низкой плотности - алгоритм сортировки для эффективной
+                  работы с данными, где значения часто повторяются путем
+                  подсчета уникальных элементов.
+                </TextBlock>
+
+                <Button Theme="{StaticResource PrimaryButtonStyle}" Command="{Binding GoTo}" CommandParameter="LowDensitySort" HorizontalAlignment="Left">Подробнее</Button>
+
+              </StackPanel>
+
+              <PathIcon Data="M521-878q143 14 243.5 114.5T879-520H593q-9-26-27.5-45.5T521-594v-284Zm80 102v136q11 9 21 19t19 21h136q-24-60-70-106t-106-70ZM441-878v284q-36 13-58 44.5T361-480q0 38 22 68.5t58 43.5v286Q287-97 184-211T81-480q0-155 103-269t257-129Zm-80 102q-91 35-145.5 116T161-480q0 99 54.5 180T361-182v-138q-38-29-59-70.5T281-480q0-48 21-89.5t59-70.5v-136Zm232 336h286q-14 143-114.5 243.5T521-82v-286q26-9 44.5-27.5T593-440Zm48 80q-8 11-18.5 21T601-320v136q60-24 106-70t70-106H641ZM281-479Zm360-121Zm0 240Z"
+                        Foreground="White"
+                        Width="96"
+                        Height="96"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Grid.Row="1"/>
+
+            </Grid>
+          </Border>
+        </Carousel>
+
+        <rxui:RoutedViewHost Grid.Row="0" Padding="20" Router="{Binding Router}">
+          <rxui:RoutedViewHost.PageTransition>
+            <CrossFade/>
+          </rxui:RoutedViewHost.PageTransition>
+          <rxui:RoutedViewHost.DefaultContent>
+            <TextBlock Text="Выберите сортировку"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       />
+          </rxui:RoutedViewHost.DefaultContent>
+          <rxui:RoutedViewHost.ViewLocator>
+            <app:RouterViewLocator />
+          </rxui:RoutedViewHost.ViewLocator>
+        </rxui:RoutedViewHost>
+
+      </StackPanel>
+    </ScrollViewer>
+
+
+  </Panel>
+</Window>
