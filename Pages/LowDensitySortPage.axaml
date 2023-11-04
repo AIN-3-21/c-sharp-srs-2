@@ -1,0 +1,50 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Amir.ViewModels"
+             xmlns:edit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:LowDensitySortVm"
+             x:Class="Amir.Pages.LowDensitySortPage">
+  <StackPanel>
+    <TextBlock Text="Сортировка низкой плотности" Classes="h1" Margin="0 16" TextWrapping="Wrap"/>
+    <TextBlock Margin="0, 12" TextWrapping="Wrap">
+      Этот алгоритм сортировки позволяет учитывать низкую 
+      плотность (то есть большое количество предварительно 
+      упорядоченных элементов) и оптимизирует сортировку, 
+      используя увеличивающийся шаг для сравнения и обмена 
+      элементов.
+    </TextBlock>
+
+    <TextBlock Text="Пример алгоритма" Classes="h2" Margin="0 16" TextWrapping="Wrap"/>
+
+    <edit:TextEditor IsReadOnly="True"
+                     ShowLineNumbers="True"
+                     FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
+                     x:Name="editor"/>
+
+    <Button Command="{Binding SortCommand}" Margin="0, 8" Theme="{StaticResource ShadowButtonStyle}" HorizontalAlignment="Left" >Запустить</Button>
+
+    <TextBlock Classes="h3" Margin="0, 12" TextWrapping="Wrap">
+      <Run>Исходный массив:</Run>
+      <Run Text="{Binding SourceArray}"/>
+    </TextBlock>
+
+    <TextBlock Classes="h3" Margin="0, 12" TextWrapping="Wrap">
+      <Run>Результат:</Run>
+      <Run Text="{Binding ResultArray}"/>
+    </TextBlock>
+
+    <TextBlock Classes="h3" Margin="0, 12" TextWrapping="Wrap">
+      <Run>Операций выполнено:</Run>
+      <Run Text="{Binding OperationsCount}"/>
+    </TextBlock>
+
+    <TextBlock Classes="h3" Margin="0, 12" TextWrapping="Wrap">
+      <Run>Памяти выделено(в куче):</Run>
+      <Run Text="{Binding MemoryAlocate}"/>
+    </TextBlock>
+
+  </StackPanel>
+</UserControl>
