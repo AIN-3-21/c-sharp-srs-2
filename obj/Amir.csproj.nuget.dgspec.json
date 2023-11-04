@@ -1,0 +1,127 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/mac/Downloads/Amir-master/Amir.csproj": {}
+  },
+  "projects": {
+    "/Users/mac/Downloads/Amir-master/Amir.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mac/Downloads/Amir-master/Amir.csproj",
+        "projectName": "Amir",
+        "projectPath": "/Users/mac/Downloads/Amir-master/Amir.csproj",
+        "packagesPath": "/Users/mac/.nuget/packages/",
+        "outputPath": "/Users/mac/Downloads/Amir-master/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mac/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AntDesign.Avalonia": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "AntDesign.ColorPicker": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "AntDesign.DataGrid": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "AntDesign.Style": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "AntDesign.Toolkit": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.5, )"
+            },
+            "Avalonia.AvaloniaEdit": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[11.0.5, )"
+            },
+            "Avalonia.Diagnostics": {
+              "target": "Package",
+              "version": "[11.0.5, )"
+            },
+            "Avalonia.Fonts.Inter": {
+              "target": "Package",
+              "version": "[11.0.5, )"
+            },
+            "Avalonia.ReactiveUI": {
+              "target": "Package",
+              "version": "[11.0.5, )"
+            },
+            "Avalonia.Themes.Fluent": {
+              "target": "Package",
+              "version": "[11.0.5, )"
+            },
+            "AvaloniaEdit.TextMate": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "MaterialDesign.Avalonia.PackIcon": {
+              "target": "Package",
+              "version": "[1.34.0, )"
+            },
+            "ReactiveUI": {
+              "target": "Package",
+              "version": "[19.5.1, )"
+            },
+            "ReactiveUI.Fody": {
+              "target": "Package",
+              "version": "[19.5.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
